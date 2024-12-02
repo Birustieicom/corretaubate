@@ -1,12 +1,12 @@
-const mario = document.querySelector('.mario');
-const pipe = document.querySelector('.pipe');
+const GT = document.querySelector('.GT');
+const bola = document.querySelector('.bola');
 
 const jump = () => {
-  mario.classList.add('jump');
+  GT.classList.add('jump');
 
   setTimeout(() => {
 
-  mario.classList.remove('jump');
+  GT.classList.remove('jump');
 
   }, 500)
 
@@ -14,19 +14,19 @@ const jump = () => {
 
 const loop = setInterval(() => {
 
-  const pipePosition = pipe.offsetLeft;
-  const marioPosition = window.getComputedStyle(mario).bottom.replace('px', '');
+  const ballPosition = bola.offsetLeft;
+  const GTPosition = window.getComputedStyle(GT).bottom.replace('px', '');
 
-  if(pipePosition <= 120 && pipePosition > 0  && marioPosition < 80) {
+  if(ballPosition <= 120 && ballPosition > 0  && GTPosition < 80) {
 
-    pipe.style.animation = 'none';
-    pipe.style.left = `${pipePosition}px`;
+    bola.style.animation = 'none';
+    bola.style.left = `${ballPosition}px`;
 
-    mario.style.animation = 'none';
-    mario.style.bottom = `${marioPosition}px`
+    GT.style.animation = 'none';
+    GT.style.bottom = `${GTPosition}px`
 
-    mario.src = '/img/game over.png'
-    mario.style.width="90px"
+    GT.src = '../../gravidataubateperdeu.png'
+    GT.style.width="90px"
 
   }
 
