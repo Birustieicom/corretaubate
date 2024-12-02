@@ -10,7 +10,7 @@ marcador.style.left = '10px';
 marcador.style.color = 'black';
 marcador.style.fontSize = '20px';
 marcador.style.fontFamily = 'Arial, sans-serif';
-marcador.textContent = `Pontos: ${pontos}`;
+marcador.textContent = `Pontos de Lorota: ${pontos}`;
 document.body.appendChild(marcador);
 
 const overlay = document.createElement('div');
@@ -35,7 +35,7 @@ const jump = () => {
   GT.classList.add('jump');
   
   pontos++;
-  marcador.textContent = `Pontos: ${pontos}`;
+  marcador.textContent = `Pontos de Lorota: ${pontos}`;
 
   setTimeout(() => {
     GT.classList.remove('jump');
@@ -56,7 +56,7 @@ const loop = setInterval(() => {
     GT.src = '../../gravidataubateperdeu.png';
     GT.style.width = '90px';
 
-    overlay.textContent = `Game Over! Pontuação final: ${pontos}`;
+    overlay.textContent = `Seus pontos de lorota: ${pontos}`;
     overlay.style.display = 'flex';
 
     clearInterval(loop);
