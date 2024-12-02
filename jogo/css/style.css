@@ -14,14 +14,14 @@
 }
 
 
-.pipe {
+.bola {
   position: absolute;
   bottom: 0;
   width: 57px;
   animation: pipe-animation 1.5s infinite linear;
 }
 
-.mario {
+.GT {
   width: 150px;
   position: absolute;
   bottom: 0;
@@ -32,7 +32,7 @@
  animation: jump 500ms ease-out;
 }
 
-@keyframes pipe-animation {
+@keyframes ball-animation {
   from{
     right: -80px;
   }
