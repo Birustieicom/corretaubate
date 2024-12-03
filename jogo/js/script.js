@@ -62,6 +62,6 @@ const loop = setInterval(() => {
   }
 }, 10);
 
-window.location(../../youarecancelado.html);
+window.location = '../../youarecancelado.html';
 
 document.addEventListener('keydown', jump);
