@@ -27,8 +27,13 @@
 .GT {
   width: 150px;
   position: absolute;
-  bottom: 0;
-         
+  bottom: 0; 
+}
+
+.CF {
+  width: 150px;
+  position: absolute;
+  bottom: 0; 
 }
 
 .jump {
