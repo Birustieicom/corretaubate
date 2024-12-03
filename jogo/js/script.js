@@ -28,7 +28,7 @@ overlay.style.display = 'flex';
 overlay.style.alignItems = 'center';
 overlay.style.justifyContent = 'center';
 overlay.style.zIndex = '1000';
-overlay.style.display = 'none'; // Inicialmente oculto
+overlay.style.display = 'none';
 document.body.appendChild(overlay);
 
 const jump = () => {
