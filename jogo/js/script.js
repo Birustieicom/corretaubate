@@ -22,7 +22,7 @@ const loop = setInterval(() => {
     GT.style.animation = 'none';
     GT.style.bottom = `${GTPosition}px`;
 
-    GT.src = '../../gravidataubateperdeu.png';
+    GT.src = '../gravidataubateperdeu.png';
     GT.style.width = '90px';
 
     overlay.textContent = `Parabéns, você conseguiu ${pontos} pontos de Lorota.`;
@@ -32,8 +32,8 @@ const loop = setInterval(() => {
   }
 }, 10);
 
-if (GT.src = '../../gravidataubateperdeu.png') {
-  window.location = '../../youarecancelado.html';
+if (GT.src = '../gravidataubateperdeu.png') {
+  window.location = '../youarecancelado.html';
 }
 
 document.addEventListener('keydown', jump);
