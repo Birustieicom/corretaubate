@@ -54,8 +54,8 @@ body {
   position: absolute;
   bottom: 0;
   background-image: url(../../sprites/bola.png);
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   background-size: 100px;
   background-repeat: no-repeat;
   animation: bola 3s linear infinite;
