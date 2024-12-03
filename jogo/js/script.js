@@ -1,6 +1,36 @@
 const GT = document.querySelector('.GT');
 const bola = document.querySelector('.bola');
 
+let pontos = 0;
+const marcador = document.createElement('div');
+marcador.id = 'marcador';
+marcador.textContent = `Pontos de Lorota: ${pontos}`;
+marcador.style.position = 'absolute';
+marcador.style.top = '10px';
+marcador.style.left = '10px';
+marcador.style.color = 'black';
+marcador.style.fontSize = '20px';
+marcador.style.fontFamily = 'Arial, sans-serif';
+document.body.appendChild(marcador);
+
+const overlay = document.createElement('div');
+overlay.id = 'overlay';
+overlay.style.position = 'fixed';
+overlay.style.top = '0';
+overlay.style.left = '0';
+overlay.style.width = '100%';
+overlay.style.height = '100%';
+overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+overlay.style.color = 'white';
+overlay.style.fontSize = '30px';
+overlay.style.fontFamily = 'Arial, sans-serif';
+overlay.style.display = 'flex';
+overlay.style.alignItems = 'center';
+overlay.style.justifyContent = 'center';
+overlay.style.zIndex = '1000';
+overlay.style.display = 'none';
+document.body.appendChild(overlay);
+
 const jump = () => {
   GT.classList.add('jump');
   pontos++;
@@ -22,18 +52,20 @@ const loop = setInterval(() => {
     GT.style.animation = 'none';
     GT.style.bottom = `${GTPosition}px`;
 
-    GT.src = '../gravidataubateperdeu.png';
+    GT.src = '../../gravidataubateperdeu.png';
     GT.style.width = '90px';
 
     overlay.textContent = `Parabéns, você conseguiu ${pontos} pontos de Lorota.`;
     overlay.style.display = 'flex';
 
     clearInterval(loop);
+
+    if (GT.src.includes('gravidataubateperdeu.png')) {
+      setTimeout(() => {
+        window.location = '../../youarecancelado.html';
+      }, 2000);
+    }
   }
 }, 10);
-
-if (GT.src = '../gravidataubateperdeu.png') {
-  window.location = '../youarecancelado.html';
-}
 
 document.addEventListener('keydown', jump);
