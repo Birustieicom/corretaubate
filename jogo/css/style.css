@@ -12,6 +12,8 @@
   position: relative;
   overflow: hidden;
   background-image: url(../../sprites/fundo.png);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 
