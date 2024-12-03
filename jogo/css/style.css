@@ -1,32 +1,96 @@
-#marcador {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(255, 105, 180, 0.9);
-  color: white;
-  padding: 20px 40px;
-  border-radius: 10px;
-  font-size: 24px;
-  font-family: 'Arial', sans-serif;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-  z-index: 1000;
-  display: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-#overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-  font-size: 30px;
-  font-family: 'Arial', sans-serif;
+body {
+  height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
-  z-index: 1000;
-  display: none;
+  align-items: center;
+  background-color: #f7f7f7;
+}
+
+.game {
+  border-bottom: 1px solid;
+  height: 300px;
+  width: 800px;
+  position: relative;
+  overflow: hidden;
+}
+
+.pdl {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  font-size: x-large;
+}
+
+.GT {
+  position: absolute;
+  bottom: 0;
+  background-image: url(../../sprites/gravidataubate.png);
+  width: 200px;
+  height: 200px;
+  background-size: 200px;
+  background-repeat: no-repeat;
+  transform: scaleX(-1);
+}
+
+.CF {
+  position: absolute;
+  bottom: 0;
+  background-image: url(../../sprites/Chris Flowers.gif);
+  width: 200px;
+  height: 200px;
+  background-size: 200px;
+  background-repeat: no-repeat;
+  transform: scaleX(-1);
+}
+
+.bola {
+  position: absolute;
+  bottom: 0;
+  background-image: url(../../sprites/bola.png);
+  width: 100px;
+  height: 100px;
+  background-size: 100px;
+  background-repeat: no-repeat;
+  animation: bola 3s linear infinite;
+}
+
+@keyframes bola {
+  0% {
+    right: -20px;
+  }
+  100% {
+    right: 850px;
+  }
+}
+
+.jump {
+  animation: jump 1.1s linear;
+}
+
+@keyframes jump {
+  0% {
+    bottom: 0;
+  }
+
+  30% {
+    bottom: 80px;
+  }
+
+  50% {
+    bottom: 100px;
+  }
+
+  80% {
+    bottom: 80px;
+  }
+
+  100% {
+    bottom: 0;
+  }
 }
