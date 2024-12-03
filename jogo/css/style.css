@@ -9,7 +9,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f7f7f7;
+  background-image: url(../../sprites/fundo.png);
+  background-repeat: no-repeat;
 }
 
 .game {
