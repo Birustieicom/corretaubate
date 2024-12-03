@@ -11,7 +11,7 @@
   margin: 0 auto;
   position: relative;
   overflow: hidden;
-  background-image: url(../../sprites/fundo.png);
+  background-image: url("../../sprites/fundo.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -27,7 +27,8 @@
 .GT {
   width: 150px;
   position: absolute;
-  bottom: 20; 
+  bottom: 20;
+  z-index: 101;
 }
 
 .CF {
