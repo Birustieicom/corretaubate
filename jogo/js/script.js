@@ -62,6 +62,8 @@ const loop = setInterval(() => {
   }
 }, 10);
 
-window.location = '../../youarecancelado.html';
+if (GT.src = '../../gravidataubateperdeu.png') {
+  window.location = '../../youarecancelado.html';
+}
 
 document.addEventListener('keydown', jump);
