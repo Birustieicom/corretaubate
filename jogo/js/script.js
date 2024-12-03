@@ -32,40 +32,38 @@ overlay.style.display = 'none';
 document.body.appendChild(overlay);
 
 const jump = () => {
-  GT.classList.add('jump');
-  pontos++;
-  marcador.textContent = `Pontos de Lorota: ${pontos}`;
-  marcador.style.display = 'block';
-  setTimeout(() => {
-    GT.classList.remove('jump');
-  }, 500);
+    GT.classList.add('jump');
+    pontos++;
+    marcador.textContent = `Pontos de Lorota: ${pontos}`;
+    setTimeout(() => {
+        GT.classList.remove('jump');
+    }, 500);
 };
 
 const loop = setInterval(() => {
-  const ballPosition = bola.offsetLeft;
-  const GTPosition = window.getComputedStyle(GT).bottom.replace('px', '');
+    const bolaPosition = bola.getBoundingClientRect();
+    const GTPosition = GT.getBoundingClientRect();
 
-  if (ballPosition <= 120 && ballPosition > 0 && GTPosition < 80) {
-    bola.style.animation = 'none';
-    bola.style.left = `${ballPosition}px`;
+    if (
+        bolaPosition.left < GTPosition.right &&
+        bolaPosition.right > GTPosition.left &&
+        bolaPosition.bottom > GTPosition.top &&
+        bolaPosition.top < GTPosition.bottom
+    ) {
+        bola.style.animation = 'none';
+        bola.style.right = `${window.innerWidth - bolaPosition.left}px`;
 
-    GT.style.animation = 'none';
-    GT.style.bottom = `${GTPosition}px`;
+        GT.style.animation = 'none';
 
-    GT.src = '../../gravidataubateperdeu.png';
-    GT.style.width = '90px';
+        overlay.textContent = `Parabéns, você conseguiu ${pontos} pontos de Lorota.`;
+        overlay.style.display = 'flex';
 
-    overlay.textContent = `Parabéns, você conseguiu ${pontos} pontos de Lorota.`;
-    overlay.style.display = 'flex';
+        clearInterval(loop);
 
-    clearInterval(loop);
-
-    if (GT.src.includes('gravidataubateperdeu.png')) {
-      setTimeout(() => {
-        window.location = '../../youarecancelado.html';
-      }, 2000);
+        setTimeout(() => {
+            window.location = '../../youarecancelado.html';
+        }, 2000);
     }
-  }
 }, 10);
 
 document.addEventListener('keydown', jump);
