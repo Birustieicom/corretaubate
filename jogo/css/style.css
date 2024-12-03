@@ -20,12 +20,12 @@
 .bola {
   position: absolute;
   bottom: 0;
-  width: 57px;
+  width: 70px;
   animation: pipe-animation 1.5s infinite linear;
 }
 
 .GT {
-  width: 100px;
+  width: 150px;
   position: absolute;
   bottom: 0;
          
