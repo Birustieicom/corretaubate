@@ -5,20 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Corre Taubaté</title>
 
-    <style>
+    <link rel="website icon" type="png" src="sprites/logo.png">
 
+    <style>
        body {
           background-image: url(sprites/teladeinicio.png);
           background-size: cover;
           background-repeat: no-repeat;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0;
+          flex-direction: column;
        }
-   
+
+       img {
+          display: block;
+          margin-bottom: 20px;
+       }
+
+       button {
+          background-color: yellow;
+          border: 2px solid green;
+          padding: 15px 30px;
+          font-size: 18px;
+          cursor: pointer;
+          transition: background-color 0.3s, border-color 0.3s;
+       }
+
+       button:hover {
+          background-color: lightyellow;
+          border-color: darkgreen;
+       }
     </style>
 
 </head>
 <body>
 
-    <img src="sprites/logo.png">
+    <img src="sprites/logo.png" alt="Logo">
     <a href="jogo/html/index.html"><button>Jogar</button></a>
 
 </body>
