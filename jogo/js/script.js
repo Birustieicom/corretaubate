@@ -32,13 +32,22 @@ overlay.style.display = 'none';
 document.body.appendChild(overlay);
 
 const jump = () => {
-    GT.classList.add('jump');
-    pontos++;
-    marcador.textContent = `Pontos de Lorota: ${pontos}`;
-    setTimeout(() => {
-        GT.classList.remove('jump');
-    }, 500);
+    if (!GT.classList.contains('jump')) {
+        GT.classList.add('jump');
+        pontos++;
+        marcador.textContent = `Pontos de Lorota: ${pontos}`;
+        setTimeout(() => {
+            GT.classList.remove('jump');
+        }, 500);
+    }
 };
+
+document.addEventListener('keydown', (event) => {
+    if (event.code === 'Space' || event.key === ' ') {
+        event.preventDefault();
+        jump();
+    }
+});
 
 const loop = setInterval(() => {
     const bolaPosition = bola.getBoundingClientRect();
@@ -65,5 +74,3 @@ const loop = setInterval(() => {
         }, 2000);
     }
 }, 10);
-
-document.addEventListener('keydown', jump);
