@@ -6,19 +6,43 @@
     <title>VOCÊ FOI CANCELADA!</title>
 
     <style>
-
        body {
           background-image: url(sprites/perdeu.png);
           background-size: cover;
           background-repeat: no-repeat;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0;
        }
-   
+
+       a {
+          text-decoration: none;
+       }
+
+       button {
+          background-color: pink;
+          color: black;
+          border: none;
+          border-radius: 25px;
+          padding: 15px 30px;
+          font-size: 18px;
+          font-family: Arial, sans-serif;
+          cursor: pointer;
+          transition: transform 0.3s, box-shadow 0.3s;
+       }
+
+       button:hover {
+          transform: scale(1.1);
+          box-shadow: 0 4px 15px rgba(255, 105, 180, 0.5);
+       }
     </style>
 
 </head>
 <body>
-
-    <a href="jogo/html/index.html"><button>Botar Camisa Branca e Tentar de Novo</button></a>
-
+    <a href="jogo/html/index.html">
+        <button>Botar Camisa Branca e Tentar de Novo</button>
+    </a>
 </body>
 </html>
